@@ -1,3 +1,7 @@
+// Configuration constants
+const CONFETTI_CREATION_PROBABILITY = 0.3; // 30% chance
+const QUOTE_ROTATION_PROBABILITY = 0.3; // 30% chance
+
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize thank you page features
@@ -61,7 +65,7 @@ function createConfetti() {
     
     // Continue creating confetti periodically
     setInterval(function() {
-        if (Math.random() < 0.3) {
+        if (Math.random() < CONFETTI_CREATION_PROBABILITY) {
             createConfettiPiece();
         }
     }, 1000);
@@ -111,7 +115,7 @@ function initializeQuoteRotation() {
     
     // Auto-rotate quotes every 10 seconds
     setInterval(function() {
-        if (Math.random() < 0.3) { // 30% chance every 10 seconds
+        if (Math.random() < QUOTE_ROTATION_PROBABILITY) { // 30% chance every 10 seconds
             newQuoteBtn.click();
         }
     }, 10000);

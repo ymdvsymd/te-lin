@@ -97,10 +97,13 @@ const encouragingMessages = [
     '生きていてくれて、ありがとう'
 ];
 
+// Configuration constants
+const ENCOURAGING_MESSAGE_PROBABILITY = 0.3; // 30% chance
+
 // Show encouraging message occasionally
 setTimeout(function() {
     setInterval(function() {
-        if (Math.random() < 0.3) { // 30% chance
+        if (Math.random() < ENCOURAGING_MESSAGE_PROBABILITY) {
             showEncouragingMessage();
         }
     }, 10000); // Every 10 seconds
