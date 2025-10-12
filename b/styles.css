@@ -12,11 +12,12 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
-                 'Noto Sans JP', 'Yu Gothic', sans-serif;
-    line-height: 1.8;
-    color: #333;
-    background-color: #f8f9fa;
+    font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Hiragino Mincho Pro',
+                 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif;
+    line-height: 2;
+    color: #3a3a3a;
+    background-color: #f5f3f0;
+    letter-spacing: 0.05em;
 }
 
 .container {
@@ -30,18 +31,33 @@ body {
    ======================================== */
 .section-title {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 400;
     text-align: center;
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
+    margin-bottom: 2rem;
+    color: #4a5759;
+    letter-spacing: 0.1em;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #b8a490, transparent);
 }
 
 .section-intro {
     text-align: center;
-    font-size: 1.1rem;
-    color: #555;
+    font-size: 1rem;
+    color: #5a6a6f;
     margin-bottom: 3rem;
-    line-height: 2;
+    line-height: 2.2;
+    letter-spacing: 0.05em;
 }
 
 /* ========================================
@@ -49,25 +65,27 @@ body {
    ======================================== */
 .cta-button {
     display: inline-block;
-    padding: 16px 48px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    padding: 14px 42px;
+    font-size: 1rem;
+    font-weight: 400;
     text-decoration: none;
-    border-radius: 50px;
-    transition: all 0.3s ease;
+    border-radius: 2px;
+    transition: all 0.4s ease;
     border: none;
     cursor: pointer;
+    letter-spacing: 0.1em;
 }
 
 .cta-button.primary {
-    background: linear-gradient(135deg, #4A90E2 0%, #5BA3E8 100%);
-    color: white;
-    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    background: #7a9299;
+    color: #f5f3f0;
+    box-shadow: 0 2px 8px rgba(90, 106, 111, 0.15);
+    border: 1px solid #6a8289;
 }
 
 .cta-button.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+    background: #8aa2a9;
+    box-shadow: 0 4px 12px rgba(90, 106, 111, 0.25);
 }
 
 /* ========================================
@@ -80,7 +98,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #e6e4df;
 }
 
 .hero-background {
@@ -89,8 +107,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #a8caba 0%, #5d9eae 100%);
-    opacity: 0.9;
+    background: linear-gradient(180deg, #d4d1cb 0%, #c9c5bd 50%, #bfb9ad 100%);
+    opacity: 0.6;
 }
 
 .water-animation {
@@ -120,22 +138,25 @@ body {
     position: relative;
     z-index: 10;
     text-align: center;
-    color: white;
-    padding: 2rem;
+    color: #4a5759;
+    padding: 3rem 2rem;
 }
 
 .hero-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    line-height: 1.4;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 2;
+    letter-spacing: 0.15em;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.95;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    opacity: 0.85;
+    letter-spacing: 0.08em;
+    font-weight: 300;
 }
 
 .scroll-indicator {
@@ -144,21 +165,22 @@ body {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    color: white;
-    opacity: 0.8;
+    color: #5a6a6f;
+    opacity: 0.6;
 }
 
 .scroll-indicator span {
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-bottom: 10px;
+    letter-spacing: 0.1em;
 }
 
 .scroll-arrow {
-    width: 24px;
-    height: 24px;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
+    width: 20px;
+    height: 20px;
+    border-right: 1px solid #5a6a6f;
+    border-bottom: 1px solid #5a6a6f;
     transform: rotate(45deg);
     animation: scrollBounce 2s infinite;
     margin: 0 auto;
@@ -178,7 +200,7 @@ body {
    ======================================== */
 .empathy-section {
     padding: 80px 0;
-    background-color: white;
+    background-color: #fafaf8;
 }
 
 .empathy-grid {
@@ -190,26 +212,30 @@ body {
 
 .empathy-card {
     text-align: center;
-    padding: 2rem 1rem;
-    background-color: #f8f9fa;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+    padding: 2.5rem 1.5rem;
+    background-color: #f5f3f0;
+    border: 1px solid #e6e3dc;
+    border-radius: 4px;
+    transition: all 0.4s ease;
 }
 
 .empathy-card:hover {
-    transform: translateY(-5px);
+    background-color: #ebe9e4;
+    box-shadow: 0 2px 8px rgba(90, 106, 111, 0.1);
 }
 
 .empathy-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    opacity: 0.9;
 }
 
 .empathy-message {
     text-align: center;
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 2;
+    font-size: 1.05rem;
+    color: #5a6a6f;
+    line-height: 2.2;
+    letter-spacing: 0.05em;
 }
 
 /* ========================================
@@ -217,26 +243,42 @@ body {
    ======================================== */
 .philosophy-section {
     padding: 80px 0;
-    background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%);
+    background: #f5f3f0;
 }
 
 .philosophy-concepts {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
 }
 
 .concept-card {
-    background: white;
-    border-radius: 16px;
-    padding: 3rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fafaf8;
+    border: 1px solid #d9d5cc;
+    border-radius: 0;
+    padding: 3.5rem 3rem;
+    box-shadow: 0 1px 4px rgba(90, 106, 111, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.concept-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, #7a9299, #b8a490);
+    transition: height 0.4s ease;
+}
+
+.concept-card:hover::before {
+    height: 100%;
 }
 
 .concept-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 12px rgba(90, 106, 111, 0.12);
 }
 
 .concept-visual {
@@ -246,42 +288,51 @@ body {
 }
 
 .concept-title {
-    font-size: 1.8rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    color: #4a5759;
+    margin-bottom: 0.8rem;
     text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.12em;
 }
 
 .concept-subtitle {
-    font-size: 1.2rem;
-    color: #4A90E2;
+    font-size: 1.05rem;
+    color: #7a9299;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
 }
 
 .concept-description {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 2;
-    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #5a6a6f;
+    line-height: 2.2;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.05em;
 }
 
 .concept-practice {
-    background-color: #e3f2fd;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #4A90E2;
+    background-color: #ebe9e4;
+    padding: 1.8rem 2rem;
+    border-radius: 0;
+    border-left: 3px solid #b8a490;
 }
 
 .concept-practice strong {
-    color: #2c3e50;
+    color: #4a5759;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
 }
 
 .concept-practice p {
-    color: #555;
+    color: #5a6a6f;
     margin: 0;
+    line-height: 2;
+    letter-spacing: 0.03em;
 }
 
 /* ========================================
@@ -289,46 +340,58 @@ body {
    ======================================== */
 .practice-section {
     padding: 80px 0;
-    background-color: white;
+    background-color: #fafaf8;
 }
 
 .practice-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .practice-item {
-    padding: 2rem;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    background: #f5f3f0;
+    border: 1px solid #e6e3dc;
+    border-radius: 0;
     position: relative;
+    transition: all 0.4s ease;
+}
+
+.practice-item:hover {
+    background: #ebe9e4;
+    box-shadow: 0 2px 8px rgba(90, 106, 111, 0.1);
 }
 
 .practice-number {
     position: absolute;
     top: -15px;
     left: 20px;
-    width: 40px;
-    height: 40px;
-    background: #4A90E2;
-    color: white;
+    width: 36px;
+    height: 36px;
+    background: #7a9299;
+    color: #fafaf8;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
 }
 
 .practice-item h3 {
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: #4a5759;
+    font-weight: 500;
+    letter-spacing: 0.05em;
 }
 
 .practice-item p {
-    color: #555;
+    color: #5a6a6f;
+    line-height: 2;
+    letter-spacing: 0.03em;
 }
 
 /* ========================================
@@ -336,72 +399,86 @@ body {
    ======================================== */
 .support-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: #f5f3f0;
+    border-top: 1px solid #e6e3dc;
 }
 
 .support-section .section-title {
-    color: #c0392b;
+    color: #8b6f47;
 }
 
 .support-intro {
     text-align: center;
-    font-size: 1.2rem;
-    color: #555;
+    font-size: 1.05rem;
+    color: #5a6a6f;
     margin-bottom: 3rem;
-    line-height: 2;
+    line-height: 2.2;
+    letter-spacing: 0.05em;
 }
 
 .support-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     margin-bottom: 2rem;
 }
 
 .support-card {
-    background: white;
+    background: #fafaf8;
     padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d9d5cc;
+    border-radius: 0;
+    box-shadow: 0 1px 4px rgba(90, 106, 111, 0.08);
+    transition: all 0.4s ease;
+}
+
+.support-card:hover {
+    box-shadow: 0 2px 8px rgba(90, 106, 111, 0.12);
 }
 
 .support-card h3 {
-    color: #c0392b;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    color: #8b6f47;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
 }
 
 .support-description {
-    color: #555;
+    color: #5a6a6f;
     margin-bottom: 1rem;
-    line-height: 1.8;
+    line-height: 2;
+    letter-spacing: 0.03em;
 }
 
 .support-tel {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #4a5759;
     margin-top: 1rem;
+    letter-spacing: 0.03em;
 }
 
 .support-link {
     display: inline-block;
-    color: #4A90E2;
+    color: #7a9299;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     margin-top: 1rem;
     transition: color 0.3s ease;
+    letter-spacing: 0.05em;
 }
 
 .support-link:hover {
-    color: #357ABD;
+    color: #6a8289;
 }
 
 .support-note {
     text-align: center;
-    color: #c0392b;
-    font-weight: 600;
-    margin-top: 2rem;
+    color: #8b6f47;
+    font-weight: 500;
+    margin-top: 2.5rem;
+    letter-spacing: 0.05em;
 }
 
 /* ========================================
@@ -409,19 +486,22 @@ body {
    ======================================== */
 .cta-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: #e6e4df;
+    color: #4a5759;
+    border-top: 1px solid #d9d5cc;
 }
 
 .cta-section .section-title {
-    color: white;
+    color: #4a5759;
 }
 
 .cta-description {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 3rem;
-    line-height: 2;
+    line-height: 2.2;
+    letter-spacing: 0.05em;
+    color: #5a6a6f;
 }
 
 .feedback-form {
@@ -449,27 +529,25 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem 1rem;
-    background: rgba(255, 255, 255, 0.7);
-    border: 4px solid rgba(255, 255, 255, 0.5);
-    border-radius: 16px;
-    transition: all 0.3s ease;
+    padding: 1.8rem 1.2rem;
+    background: #fafaf8;
+    border: 2px solid #d9d5cc;
+    border-radius: 0;
+    transition: all 0.4s ease;
     min-height: 140px;
     position: relative;
 }
 
 .feedback-option:hover .feedback-label {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.85);
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+    background: #f5f3f0;
+    border-color: #b8a490;
+    box-shadow: 0 2px 8px rgba(90, 106, 111, 0.1);
 }
 
 .feedback-option input[type="radio"]:checked + .feedback-label {
-    border-color: #FFD700;
-    background: #FFFFFF;
-    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.3), 0 8px 30px rgba(255, 255, 255, 0.6);
-    transform: scale(1.05);
+    border-color: #7a9299;
+    background: #f5f3f0;
+    box-shadow: 0 0 0 3px rgba(122, 146, 153, 0.2), 0 2px 12px rgba(90, 106, 111, 0.15);
 }
 
 .feedback-option input[type="radio"]:checked + .feedback-label::before {
@@ -477,16 +555,16 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 30px;
-    height: 30px;
-    background: #FFD700;
-    color: white;
+    width: 28px;
+    height: 28px;
+    background: #7a9299;
+    color: #fafaf8;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.1rem;
+    font-weight: 400;
     animation: checkmarkPop 0.3s ease;
 }
 
@@ -509,34 +587,36 @@ body {
 }
 
 .feedback-text {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #667eea;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #5a6a6f;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    letter-spacing: 0.05em;
 }
 
 .feedback-option input[type="radio"]:checked + .feedback-label .feedback-text {
-    color: #2c3e50;
-    font-size: 1.1rem;
+    color: #4a5759;
+    font-weight: 500;
 }
 
 .feedback-option input[type="radio"]:checked + .feedback-label .feedback-emoji {
-    transform: scale(1.2);
+    transform: scale(1.15);
     transition: transform 0.3s ease;
 }
 
 .feedback-form .cta-button {
-    background: white;
-    color: #667eea;
+    background: #7a9299;
+    color: #fafaf8;
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
     margin: 0 auto;
     display: block;
+    border: 1px solid #6a8289;
 }
 
 .feedback-form .cta-button:hover {
-    background: #f8f9fa;
+    background: #8aa2a9;
 }
 
 .privacy-note {
@@ -550,20 +630,24 @@ body {
    フッター
    ======================================== */
 .footer {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #4a5759;
+    color: #e6e4df;
     padding: 3rem 0;
     text-align: center;
+    border-top: 1px solid #5a6a6f;
 }
 
 .footer-message {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.1em;
+    font-weight: 300;
 }
 
 .footer-copyright {
     opacity: 0.7;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
 }
 
 /* ========================================
