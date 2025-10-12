@@ -49,30 +49,48 @@ animateElements.forEach(el => {
 // ========================================
 // フォーム送信処理
 // ========================================
-const newsletterForm = document.getElementById('newsletter-form');
-const emailInput = document.getElementById('email');
+const feedbackForm = document.getElementById('feedback-form');
 
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
+if (feedbackForm) {
+    feedbackForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        const email = emailInput.value.trim();
+        // 選択されたフィードバックを取得
+        const selectedFeedback = document.querySelector('input[name="feedback"]:checked');
 
-        // メールアドレスのバリデーション
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showMessage('有効なメールアドレスを入力してください', 'error');
+        if (!selectedFeedback) {
+            showMessage('いずれかの選択肢を選んでください', 'error');
             return;
         }
 
-        // ローカルストレージに保存（実際の運用では適切なバックエンド処理が必要）
+        const feedbackValue = selectedFeedback.value;
+
+        // ローカルストレージに保存
         try {
-            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userFeedback', feedbackValue);
+            localStorage.setItem('feedbackTimestamp', new Date().toISOString());
+
+            // CV価値を設定（コンバージョン価値は後でGA4で設定可能）
+            const conversionValues = {
+                'very-helpful': 100,
+                'helpful': 75,
+                'somewhat-helpful': 50,
+                'not-helpful': 25
+            };
+
+            const conversionValue = conversionValues[feedbackValue] || 0;
+            localStorage.setItem('conversionValue', conversionValue);
+
+            // トラッキングイベント発火
+            trackEvent('feedback_submission', {
+                feedback_type: feedbackValue,
+                conversion_value: conversionValue
+            });
 
             // サンクスページへリダイレクト
-            window.location.href = 'thank-you.html';
+            window.location.href = 'thanks.html';
         } catch (error) {
-            console.error('Error saving email:', error);
+            console.error('Error saving feedback:', error);
             showMessage('エラーが発生しました。もう一度お試しください。', 'error');
         }
     });
@@ -103,7 +121,10 @@ function showMessage(message, type = 'success') {
     `;
 
     // フォームの後に挿入
-    newsletterForm.insertAdjacentElement('afterend', messageDiv);
+    const form = feedbackForm || document.querySelector('form');
+    if (form) {
+        form.insertAdjacentElement('afterend', messageDiv);
+    }
 
     // 3秒後に自動で削除
     setTimeout(() => {

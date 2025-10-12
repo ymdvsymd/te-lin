@@ -160,7 +160,7 @@
                 <div class="support-card">
                     <h3>いのちSOS</h3>
                     <p class="support-description">生きづらさを感じている方へ、様々な悩みに関する相談窓口を案内しています。</p>
-                    <a href="https://www.lifelink.or.jp/inochisos/" target="_blank" class="support-link">相談窓口を見る →</a>
+                    <a href="https://www.lifelink.or.jp/inochisos/" target="_blank" rel="noopener" class="support-link">相談窓口を見る →</a>
                 </div>
 
                 <div class="support-card">
@@ -185,16 +185,49 @@
     <!-- CTA セクション -->
     <section id="cta" class="cta-section">
         <div class="container">
-            <h2 class="section-title">もっと詳しく学びたい方へ</h2>
+            <h2 class="section-title">このページの内容はいかがでしたか？</h2>
             <p class="cta-description">
-                老荘思想をもっと深く知りたい方、日常で実践するヒントが欲しい方へ、<br>
-                無料のガイドブックをお届けします。
+                あなたの率直な感想をお聞かせください。<br>
+                いただいた声は、より多くの方の支えになるコンテンツ作りに活かします。
             </p>
-            <form id="newsletter-form" class="newsletter-form">
-                <input type="email" id="email" name="email" placeholder="メールアドレスを入力" required>
-                <button type="submit" class="cta-button primary">無料ガイドを受け取る</button>
+            <form id="feedback-form" class="feedback-form">
+                <div class="feedback-options">
+                    <label class="feedback-option">
+                        <input type="radio" name="feedback" value="very-helpful" required>
+                        <span class="feedback-label">
+                            <span class="feedback-emoji">😊</span>
+                            <span class="feedback-text">とても共感した</span>
+                        </span>
+                    </label>
+
+                    <label class="feedback-option">
+                        <input type="radio" name="feedback" value="helpful" required>
+                        <span class="feedback-label">
+                            <span class="feedback-emoji">🙂</span>
+                            <span class="feedback-text">共感した</span>
+                        </span>
+                    </label>
+
+                    <label class="feedback-option">
+                        <input type="radio" name="feedback" value="somewhat-helpful" required>
+                        <span class="feedback-label">
+                            <span class="feedback-emoji">😐</span>
+                            <span class="feedback-text">あまり共感しなかった</span>
+                        </span>
+                    </label>
+
+                    <label class="feedback-option">
+                        <input type="radio" name="feedback" value="not-helpful" required>
+                        <span class="feedback-label">
+                            <span class="feedback-emoji">😔</span>
+                            <span class="feedback-text">まったく共感しなかった</span>
+                        </span>
+                    </label>
+                </div>
+
+                <button type="submit" class="cta-button primary">感想を送信</button>
             </form>
-            <p class="privacy-note">※ご入力いただいたメールアドレスは、ガイドブック配信以外には使用いたしません。</p>
+            <p class="privacy-note">※いただいた感想は統計データとして活用させていただきます。</p>
         </div>
     </section>
 

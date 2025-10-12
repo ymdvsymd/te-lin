@@ -218,28 +218,13 @@
     <div class="thank-you-container">
         <div class="thank-you-icon">🙏</div>
         <h1 class="thank-you-title">ありがとうございます</h1>
-        <p class="thank-you-message">
-            ガイドブックのお申し込みありがとうございます。<br>
-            まもなく、ご登録いただいたメールアドレス宛に<br>
-            「老荘思想で学ぶ、楽に生きるヒント」をお送りいたします。
+        <p class="thank-you-message" id="thank-you-message">
+            貴重なご感想をありがとうございます。<br>
+            いただいた声を、より多くの方の支えになるコンテンツ作りに活かしてまいります。
         </p>
 
-        <div class="next-steps">
-            <h3>次のステップ</h3>
-            <ul class="step-list">
-                <li>
-                    <span class="step-number">1</span>
-                    <span>メールボックスを確認してください（迷惑メールフォルダもご確認ください）</span>
-                </li>
-                <li>
-                    <span class="step-number">2</span>
-                    <span>ガイドブックをダウンロードして、じっくりお読みください</span>
-                </li>
-                <li>
-                    <span class="step-number">3</span>
-                    <span>日常生活で少しずつ実践してみましょう</span>
-                </li>
-            </ul>
+        <div class="next-steps" id="personalized-message">
+            <!-- パーソナライズされたメッセージがJavaScriptで挿入されます -->
         </div>
 
         <div class="support-reminder">
@@ -253,7 +238,6 @@
 
         <div class="cta-buttons">
             <a href="index.html" class="btn btn-primary">トップページに戻る</a>
-            <a href="index.html#philosophy" class="btn btn-secondary">老荘思想をもっと学ぶ</a>
         </div>
 
         <div class="social-share">
@@ -263,7 +247,7 @@
     </div>
 
     <script>
-        // ページ読み込み時のアニメーション
+        // ページ読み込み時の処理
         window.addEventListener('load', () => {
             const container = document.querySelector('.thank-you-container');
             container.style.opacity = '0';
@@ -272,16 +256,81 @@
                 container.style.transition = 'opacity 0.8s ease';
                 container.style.opacity = '1';
             }, 100);
-        });
 
-        // Google Analytics トラッキング（オプション）
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'conversion', {
-                'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
-                'value': 0.0,
-                'currency': 'JPY'
-            });
-        }
+            // ローカルストレージからフィードバック情報を取得
+            const feedback = localStorage.getItem('userFeedback');
+            const conversionValue = localStorage.getItem('conversionValue') || 0;
+
+            // パーソナライズされたメッセージを表示
+            const personalizedMessageDiv = document.getElementById('personalized-message');
+            let messageContent = '';
+
+            switch(feedback) {
+                case 'very-helpful':
+                    messageContent = `
+                        <h3>😊 とても共感していただけて嬉しいです</h3>
+                        <p style="text-align: center; line-height: 2; margin-top: 1rem;">
+                            老荘思想の「無為自然」の教えは、現代社会で頑張りすぎている方々に<br>
+                            心の余裕をもたらすことができます。<br>
+                            日常の中で少しずつ実践してみてください。
+                        </p>
+                    `;
+                    break;
+                case 'helpful':
+                    messageContent = `
+                        <h3>🙂 共感していただきありがとうございます</h3>
+                        <p style="text-align: center; line-height: 2; margin-top: 1rem;">
+                            老荘思想の考え方は、少しずつ日常に取り入れることで<br>
+                            心が楽になっていきます。<br>
+                            焦らず、自分のペースで実践してみてください。
+                        </p>
+                    `;
+                    break;
+                case 'somewhat-helpful':
+                    messageContent = `
+                        <h3>😐 率直なご意見をありがとうございます</h3>
+                        <p style="text-align: center; line-height: 2; margin-top: 1rem;">
+                            老荘思想は2500年前の教えですが、<br>
+                            すべての方にすぐに響くわけではないかもしれません。<br>
+                            他にもストレス軽減の方法は様々あります。下記の相談窓口もご活用ください。
+                        </p>
+                    `;
+                    break;
+                case 'not-helpful':
+                    messageContent = `
+                        <h3>😔 正直なご感想をありがとうございます</h3>
+                        <p style="text-align: center; line-height: 2; margin-top: 1rem;">
+                            今回の内容が十分にお役に立てず申し訳ございません。<br>
+                            もし今つらい状況にある場合は、専門の相談窓口がサポートいたします。<br>
+                            一人で抱え込まず、ぜひご利用ください。
+                        </p>
+                    `;
+                    break;
+                default:
+                    messageContent = `
+                        <h3>貴重なご意見をありがとうございます</h3>
+                        <p style="text-align: center; line-height: 2; margin-top: 1rem;">
+                            いただいたご感想を今後のコンテンツ作りに活かしてまいります。
+                        </p>
+                    `;
+            }
+
+            personalizedMessageDiv.innerHTML = messageContent;
+
+            // Google Analytics トラッキング（CV価値を含む）
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
+                    'value': parseFloat(conversionValue),
+                    'currency': 'JPY',
+                    'feedback_type': feedback
+                });
+            }
+
+            // コンソールログ（デバッグ用）
+            console.log('Feedback:', feedback);
+            console.log('Conversion Value:', conversionValue);
+        });
     </script>
 </body>
 </html>
