@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ありがとうございます - 老荘思想ガイド</title>
+    <meta name="description" content="ガイドブックのお申し込みありがとうございます。メールをご確認ください。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+                         'Noto Sans JP', 'Yu Gothic', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #a8caba 0%, #5d9eae 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .thank-you-container {
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .thank-you-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: bounce 1s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .thank-you-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .thank-you-message {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 3rem;
+            line-height: 2;
+        }
+
+        .next-steps {
+            background: #f0f4f8;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .next-steps h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .step-list {
+            list-style: none;
+        }
+
+        .step-list li {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: #4A90E2;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .support-reminder {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .support-reminder h4 {
+            color: #856404;
+            margin-bottom: 1rem;
+        }
+
+        .support-reminder p {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+
+        .support-reminder a {
+            color: #004085;
+            font-weight: 600;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4A90E2 0%, #5BA3E8 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #4A90E2;
+            border: 2px solid #4A90E2;
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+
+        .social-share {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .social-share h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .social-share p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 3rem 2rem;
+            }
+
+            .thank-you-title {
+                font-size: 2rem;
+            }
+
+            .thank-you-message {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-icon">🙏</div>
+        <h1 class="thank-you-title">ありがとうございます</h1>
+        <p class="thank-you-message">
+            ガイドブックのお申し込みありがとうございます。<br>
+            まもなく、ご登録いただいたメールアドレス宛に<br>
+            「老荘思想で学ぶ、楽に生きるヒント」をお送りいたします。
+        </p>
+
+        <div class="next-steps">
+            <h3>次のステップ</h3>
+            <ul class="step-list">
+                <li>
+                    <span class="step-number">1</span>
+                    <span>メールボックスを確認してください（迷惑メールフォルダもご確認ください）</span>
+                </li>
+                <li>
+                    <span class="step-number">2</span>
+                    <span>ガイドブックをダウンロードして、じっくりお読みください</span>
+                </li>
+                <li>
+                    <span class="step-number">3</span>
+                    <span>日常生活で少しずつ実践してみましょう</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="support-reminder">
+            <h4>💙 困ったときは一人で抱え込まないでください</h4>
+            <p>
+                つらいとき、話を聞いてくれる人がいます：<br>
+                <a href="https://www.lifelink.or.jp/inochisos/" target="_blank">いのちSOS - 相談窓口案内</a><br>
+                よりそいホットライン: <strong>0120-279-338（24時間・無料）</strong>
+            </p>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="index.html" class="btn btn-primary">トップページに戻る</a>
+            <a href="index.html#philosophy" class="btn btn-secondary">老荘思想をもっと学ぶ</a>
+        </div>
+
+        <div class="social-share">
+            <h4>このページを大切な人にシェアしませんか？</h4>
+            <p>生きづらさを感じている誰かの助けになるかもしれません。</p>
+        </div>
+    </div>
+
+    <script>
+        // ページ読み込み時のアニメーション
+        window.addEventListener('load', () => {
+            const container = document.querySelector('.thank-you-container');
+            container.style.opacity = '0';
+
+            setTimeout(() => {
+                container.style.transition = 'opacity 0.8s ease';
+                container.style.opacity = '1';
+            }, 100);
+        });
+
+        // Google Analytics トラッキング（オプション）
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
+                'value': 0.0,
+                'currency': 'JPY'
+            });
+        }
+    </script>
+</body>
+</html>

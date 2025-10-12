@@ -1,0 +1,537 @@
+/* ========================================
+   リセット & ベーススタイル
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+                 'Noto Sans JP', 'Yu Gothic', sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   タイポグラフィ
+   ======================================== */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 3rem;
+    line-height: 2;
+}
+
+/* ========================================
+   ボタン
+   ======================================== */
+.cta-button {
+    display: inline-block;
+    padding: 16px 48px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, #4A90E2 0%, #5BA3E8 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.cta-button.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+}
+
+/* ========================================
+   ファーストビュー
+   ======================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #a8caba 0%, #5d9eae 100%);
+    opacity: 0.9;
+}
+
+.water-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    animation: waterFlow 20s ease-in-out infinite;
+}
+
+@keyframes waterFlow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    opacity: 0.8;
+}
+
+.scroll-indicator span {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.scroll-arrow {
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    animation: scrollBounce 2s infinite;
+    margin: 0 auto;
+}
+
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: rotate(45deg) translateY(0);
+    }
+    50% {
+        transform: rotate(45deg) translateY(10px);
+    }
+}
+
+/* ========================================
+   共感セクション
+   ======================================== */
+.empathy-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.empathy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.empathy-card {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.empathy-card:hover {
+    transform: translateY(-5px);
+}
+
+.empathy-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.empathy-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 2;
+}
+
+/* ========================================
+   老荘思想セクション
+   ======================================== */
+.philosophy-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%);
+}
+
+.philosophy-concepts {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.concept-card {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.concept-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.concept-visual {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.concept-title {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.concept-subtitle {
+    font-size: 1.2rem;
+    color: #4A90E2;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.concept-description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 2;
+    margin-bottom: 2rem;
+}
+
+.concept-practice {
+    background-color: #e3f2fd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #4A90E2;
+}
+
+.concept-practice strong {
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.concept-practice p {
+    color: #555;
+    margin: 0;
+}
+
+/* ========================================
+   実践セクション
+   ======================================== */
+.practice-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.practice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.practice-item {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+    position: relative;
+}
+
+.practice-number {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: #4A90E2;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.practice-item h3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.practice-item p {
+    color: #555;
+}
+
+/* ========================================
+   相談窓口セクション
+   ======================================== */
+.support-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.support-section .section-title {
+    color: #c0392b;
+}
+
+.support-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 3rem;
+    line-height: 2;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.support-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.support-card h3 {
+    color: #c0392b;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.support-description {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.support-tel {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 1rem;
+}
+
+.support-link {
+    display: inline-block;
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.support-link:hover {
+    color: #357ABD;
+}
+
+.support-note {
+    text-align: center;
+    color: #c0392b;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+/* ========================================
+   CTAセクション
+   ======================================== */
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.cta-section .section-title {
+    color: white;
+}
+
+.cta-description {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 2;
+}
+
+.newsletter-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    min-width: 250px;
+    padding: 16px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+}
+
+.newsletter-form .cta-button {
+    background: white;
+    color: #667eea;
+}
+
+.newsletter-form .cta-button:hover {
+    background: #f8f9fa;
+}
+
+.privacy-note {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ========================================
+   フッター
+   ======================================== */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer-message {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-copyright {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   レスポンシブデザイン
+   ======================================== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .concept-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .concept-title {
+        font-size: 1.4rem;
+    }
+
+    .concept-description {
+        font-size: 1rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form .cta-button {
+        width: 100%;
+    }
+
+    .empathy-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .practice-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .empathy-grid {
+        grid-template-columns: 1fr;
+    }
+}

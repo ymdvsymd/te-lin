@@ -21,7 +21,7 @@ lp-lab/
 │   ├── thank-you.html
 │   ├── thank-you-styles.css
 │   └── thank-you-script.js
-└── b/  # 老荘思想を元に楽に生きるコツを紹介（現在空）
+└── b/  # 老荘思想を元に楽に生きるコツを紹介
 ```
 
 ### aディレクトリについて
