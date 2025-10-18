@@ -16,5 +16,8 @@ Thumbs.db
 # Browser testing artifacts
 /playwright-logs/
 
+# Node.js
+node_modules/
+
 # Claude Code
 .claude/settings.local.json
