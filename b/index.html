@@ -26,7 +26,7 @@
       content="2500年前の老荘思想が教える、現代を楽に生きるヒント。無為自然、上善如水の教えから、自分らしく生きる方法を学びましょう。"
     />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=1.1.0" />
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -264,6 +264,38 @@
       </div>
     </section>
 
+    <!-- CTA セクション -->
+    <section id="cta" class="cta-section">
+      <div class="container">
+        <h2 class="section-title">このページの内容はいかがでしたか？</h2>
+        <p class="cta-description">
+          あなたの率直な感想をお聞かせください。<br />
+          いただいた声は、より多くの方の支えになるコンテンツ作りに活かします。
+        </p>
+        <form id="feedback-form" class="feedback-form">
+          <div class="feedback-options">
+            <label class="feedback-option">
+              <input type="radio" name="feedback" value="helpful" required />
+              <span class="feedback-label">
+                <span class="feedback-emoji">😊</span>
+                <span class="feedback-text">役に立った</span>
+              </span>
+            </label>
+
+            <label class="feedback-option">
+              <input type="radio" name="feedback" value="not-helpful" required />
+              <span class="feedback-label">
+                <span class="feedback-emoji">😐</span>
+                <span class="feedback-text">役に立たなかった</span>
+              </span>
+            </label>
+          </div>
+
+          <div id="feedback-message" class="feedback-message" style="display: none;"></div>
+        </form>
+      </div>
+    </section>
+
     <!-- 書籍紹介セクション -->
     <section id="books" class="books-section">
       <div class="container">
@@ -374,72 +406,6 @@
       </div>
     </section>
 
-    <!-- CTA セクション -->
-    <section id="cta" class="cta-section">
-      <div class="container">
-        <h2 class="section-title">このページの内容はいかがでしたか？</h2>
-        <p class="cta-description">
-          あなたの率直な感想をお聞かせください。<br />
-          いただいた声は、より多くの方の支えになるコンテンツ作りに活かします。
-        </p>
-        <form id="feedback-form" class="feedback-form">
-          <div class="feedback-options">
-            <label class="feedback-option">
-              <input
-                type="radio"
-                name="feedback"
-                value="very-helpful"
-                required
-              />
-              <span class="feedback-label">
-                <span class="feedback-emoji">😊</span>
-                <span class="feedback-text">とても共感した</span>
-              </span>
-            </label>
-
-            <label class="feedback-option">
-              <input type="radio" name="feedback" value="helpful" required />
-              <span class="feedback-label">
-                <span class="feedback-emoji">🙂</span>
-                <span class="feedback-text">共感した</span>
-              </span>
-            </label>
-
-            <label class="feedback-option">
-              <input
-                type="radio"
-                name="feedback"
-                value="somewhat-helpful"
-                required
-              />
-              <span class="feedback-label">
-                <span class="feedback-emoji">😐</span>
-                <span class="feedback-text">あまり共感しなかった</span>
-              </span>
-            </label>
-
-            <label class="feedback-option">
-              <input
-                type="radio"
-                name="feedback"
-                value="not-helpful"
-                required
-              />
-              <span class="feedback-label">
-                <span class="feedback-emoji">😔</span>
-                <span class="feedback-text">まったく共感しなかった</span>
-              </span>
-            </label>
-          </div>
-
-          <button type="submit" class="cta-button primary">感想を送信</button>
-        </form>
-        <p class="privacy-note">
-          ※いただいた感想は統計データとして活用させていただきます。
-        </p>
-      </div>
-    </section>
-
     <!-- フッター -->
     <footer class="footer">
       <div class="container">
@@ -448,6 +414,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=1.1.0"></script>
   </body>
 </html>
