@@ -732,6 +732,39 @@ body {
     background: #8aa2a9;
 }
 
+.feedback-message {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f0f8f5;
+    border-left: 4px solid #7a9299;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.feedback-response-text {
+    color: #4a5759;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.feedback-option.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.feedback-option.disabled .feedback-label {
+    background: #f5f3f0;
+    border-color: #d9d5cc;
+    cursor: not-allowed;
+}
+
+.feedback-option.disabled:hover .feedback-label {
+    background: #f5f3f0;
+    border-color: #d9d5cc;
+    box-shadow: none;
+}
+
 .privacy-note {
     text-align: center;
     margin-top: 1rem;
@@ -767,6 +800,10 @@ body {
    レスポンシブデザイン
    ======================================== */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
     .hero-title {
         font-size: 1.8rem;
     }
@@ -811,9 +848,17 @@ body {
     .selfcare-grid {
         grid-template-columns: 1fr;
     }
+
+    .cta-section {
+        padding: 60px 0;
+    }
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+
     .hero-title {
         font-size: 1.5rem;
     }
@@ -828,5 +873,9 @@ body {
 
     .feedback-label {
         min-height: 120px;
+    }
+
+    .cta-section {
+        padding: 50px 0;
     }
 }

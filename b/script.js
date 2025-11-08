@@ -47,92 +47,97 @@ animateElements.forEach((el) => {
 });
 
 // ========================================
-// フォーム送信処理
+// フィードバック処理
 // ========================================
 const feedbackForm = document.getElementById('feedback-form');
+const feedbackRadios = document.querySelectorAll('input[name="feedback"]');
+let feedbackSubmitted = false;
 
 if (feedbackForm) {
-  feedbackForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+  feedbackRadios.forEach((radio) => {
+    radio.addEventListener('change', function () {
+      // 既に送信済みの場合は何もしない
+      if (feedbackSubmitted) {
+        this.checked = false;
+        return;
+      }
 
-    // 選択されたフィードバックを取得
-    const selectedFeedback = document.querySelector(
-      'input[name="feedback"]:checked'
-    );
+      const feedbackValue = this.value;
 
-    if (!selectedFeedback) {
-      showMessage('いずれかの選択肢を選んでください', 'error');
-      return;
-    }
+      // ローカルストレージに保存
+      try {
+        localStorage.setItem('userFeedback', feedbackValue);
+        localStorage.setItem('feedbackTimestamp', new Date().toISOString());
 
-    const feedbackValue = selectedFeedback.value;
+        // CV価値を設定
+        const conversionValues = {
+          helpful: 100,
+          'not-helpful': 25,
+        };
 
-    // ローカルストレージに保存
-    try {
-      localStorage.setItem('userFeedback', feedbackValue);
-      localStorage.setItem('feedbackTimestamp', new Date().toISOString());
+        const conversionValue = conversionValues[feedbackValue] || 0;
+        localStorage.setItem('conversionValue', conversionValue);
 
-      // CV価値を設定（コンバージョン価値は後でGA4で設定可能）
-      const conversionValues = {
-        'very-helpful': 100,
-        helpful: 75,
-        'somewhat-helpful': 50,
-        'not-helpful': 25,
-      };
+        // トラッキングイベント発火
+        trackEvent('feedback_submission', {
+          feedback_type: feedbackValue,
+          conversion_value: conversionValue,
+        });
 
-      const conversionValue = conversionValues[feedbackValue] || 0;
-      localStorage.setItem('conversionValue', conversionValue);
+        // メッセージを表示
+        displayFeedbackMessage(feedbackValue);
 
-      // トラッキングイベント発火
-      trackEvent('feedback_submission', {
-        feedback_type: feedbackValue,
-        conversion_value: conversionValue,
-      });
+        // ラジオボタンを無効化
+        disableFeedbackRadios();
 
-      // サンクスページへリダイレクト
-      window.location.href = 'thanks.html';
-    } catch (error) {
-      console.error('Error saving feedback:', error);
-      showMessage('エラーが発生しました。もう一度お試しください。', 'error');
-    }
+        // 送信済みフラグを設定
+        feedbackSubmitted = true;
+      } catch (error) {
+        console.error('Error saving feedback:', error);
+        this.checked = false;
+      }
+    });
   });
 }
 
 // ========================================
-// メッセージ表示関数
+// フィードバックメッセージを表示
 // ========================================
-function showMessage(message, type = 'success') {
-  // 既存のメッセージを削除
-  const existingMessage = document.querySelector('.form-message');
-  if (existingMessage) {
-    existingMessage.remove();
-  }
+function displayFeedbackMessage(feedbackValue) {
+  const messageContainer = document.getElementById('feedback-message');
+  if (!messageContainer) return;
 
-  // メッセージ要素を作成
-  const messageDiv = document.createElement('div');
-  messageDiv.className = `form-message ${type}`;
-  messageDiv.textContent = message;
-  messageDiv.style.cssText = `
-        margin-top: 1rem;
-        padding: 1rem;
-        border-radius: 8px;
-        text-align: center;
-        font-weight: 600;
-        background-color: ${type === 'error' ? '#ffe5e5' : '#e8f5e9'};
-        color: ${type === 'error' ? '#c0392b' : '#2e7d32'};
-    `;
+  const messages = {
+    helpful:
+      'ご共感いただきありがとうございます！老荘思想の教えが少しでもお役に立てれば幸いです。',
+    'not-helpful':
+      '率直なご意見をありがとうございます。より良いコンテンツづくりに活かします。',
+  };
 
-  // フォームの後に挿入
-  const form = feedbackForm || document.querySelector('form');
-  if (form) {
-    form.insertAdjacentElement('afterend', messageDiv);
-  }
+  const message = messages[feedbackValue] || '';
 
-  // 3秒後に自動で削除
-  setTimeout(() => {
-    messageDiv.remove();
-  }, 3000);
+  messageContainer.innerHTML = `
+    <div class="feedback-response">
+      <p class="feedback-response-text">${message}</p>
+    </div>
+  `;
+  messageContainer.style.display = 'block';
 }
+
+// ========================================
+// ラジオボタンを無効化
+// ========================================
+function disableFeedbackRadios() {
+  feedbackRadios.forEach((radio) => {
+    radio.disabled = true;
+  });
+
+  // ラジオボタンのラベルにdisabledクラスを追加
+  document.querySelectorAll('.feedback-option').forEach((option) => {
+    option.classList.add('disabled');
+  });
+}
+
 
 // ========================================
 // スクロールインジケーターの非表示

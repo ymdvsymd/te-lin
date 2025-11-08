@@ -264,6 +264,41 @@
       </div>
     </section>
 
+    <!-- CTA セクション -->
+    <section id="cta" class="cta-section">
+      <div class="container">
+        <h2 class="section-title">このページの内容はいかがでしたか？</h2>
+        <p class="cta-description">
+          あなたの率直な感想をお聞かせください。<br />
+          いただいた声は、より多くの方の支えになるコンテンツ作りに活かします。
+        </p>
+        <form id="feedback-form" class="feedback-form">
+          <div class="feedback-options">
+            <label class="feedback-option">
+              <input type="radio" name="feedback" value="helpful" required />
+              <span class="feedback-label">
+                <span class="feedback-emoji">😊</span>
+                <span class="feedback-text">役に立った</span>
+              </span>
+            </label>
+
+            <label class="feedback-option">
+              <input type="radio" name="feedback" value="not-helpful" required />
+              <span class="feedback-label">
+                <span class="feedback-emoji">😐</span>
+                <span class="feedback-text">役に立たなかった</span>
+              </span>
+            </label>
+          </div>
+
+          <div id="feedback-message" class="feedback-message" style="display: none;"></div>
+        </form>
+        <p class="privacy-note">
+          ※いただいた感想は統計データとして活用させていただきます。
+        </p>
+      </div>
+    </section>
+
     <!-- 書籍紹介セクション -->
     <section id="books" class="books-section">
       <div class="container">
@@ -370,72 +405,6 @@
 
         <p class="support-note">
           ※相談することは弱さではありません。自分を大切にする一歩です。
-        </p>
-      </div>
-    </section>
-
-    <!-- CTA セクション -->
-    <section id="cta" class="cta-section">
-      <div class="container">
-        <h2 class="section-title">このページの内容はいかがでしたか？</h2>
-        <p class="cta-description">
-          あなたの率直な感想をお聞かせください。<br />
-          いただいた声は、より多くの方の支えになるコンテンツ作りに活かします。
-        </p>
-        <form id="feedback-form" class="feedback-form">
-          <div class="feedback-options">
-            <label class="feedback-option">
-              <input
-                type="radio"
-                name="feedback"
-                value="very-helpful"
-                required
-              />
-              <span class="feedback-label">
-                <span class="feedback-emoji">😊</span>
-                <span class="feedback-text">とても共感した</span>
-              </span>
-            </label>
-
-            <label class="feedback-option">
-              <input type="radio" name="feedback" value="helpful" required />
-              <span class="feedback-label">
-                <span class="feedback-emoji">🙂</span>
-                <span class="feedback-text">共感した</span>
-              </span>
-            </label>
-
-            <label class="feedback-option">
-              <input
-                type="radio"
-                name="feedback"
-                value="somewhat-helpful"
-                required
-              />
-              <span class="feedback-label">
-                <span class="feedback-emoji">😐</span>
-                <span class="feedback-text">あまり共感しなかった</span>
-              </span>
-            </label>
-
-            <label class="feedback-option">
-              <input
-                type="radio"
-                name="feedback"
-                value="not-helpful"
-                required
-              />
-              <span class="feedback-label">
-                <span class="feedback-emoji">😔</span>
-                <span class="feedback-text">まったく共感しなかった</span>
-              </span>
-            </label>
-          </div>
-
-          <button type="submit" class="cta-button primary">感想を送信</button>
-        </form>
-        <p class="privacy-note">
-          ※いただいた感想は統計データとして活用させていただきます。
         </p>
       </div>
     </section>
