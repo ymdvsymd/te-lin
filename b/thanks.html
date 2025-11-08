@@ -1,309 +1,331 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+  <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N6H8FT3M');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-N6H8FT3M');
+    </script>
     <!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ありがとうございます - 老荘思想ガイド</title>
-    <meta name="description" content="ガイドブックのお申し込みありがとうございます。メールをご確認ください。">
+    <meta
+      name="description"
+      content="ガイドブックのお申し込みありがとうございます。メールをご確認ください。"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Hiragino Mincho Pro',
-                         'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif;
-            line-height: 2;
-            color: #3a3a3a;
-            background: #e6e4df;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            letter-spacing: 0.05em;
-        }
+      body {
+        font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN',
+          'Hiragino Mincho Pro', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif;
+        line-height: 2;
+        color: #3a3a3a;
+        background: #e6e4df;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        letter-spacing: 0.05em;
+      }
 
+      .thank-you-container {
+        max-width: 800px;
+        background: #fafaf8;
+        border: 1px solid #d9d5cc;
+        border-radius: 0;
+        padding: 4rem 3rem;
+        text-align: center;
+        box-shadow: 0 2px 12px rgba(90, 106, 111, 0.1);
+        animation: fadeInUp 0.8s ease;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .thank-you-icon {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+        animation: bounce 1s ease infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .thank-you-title {
+        font-size: 2.2rem;
+        color: #4a5759;
+        margin-bottom: 2rem;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+      }
+
+      .thank-you-message {
+        font-size: 1.05rem;
+        color: #5a6a6f;
+        margin-bottom: 3rem;
+        line-height: 2.2;
+        letter-spacing: 0.05em;
+      }
+
+      .next-steps {
+        background: #f5f3f0;
+        border: 1px solid #e6e3dc;
+        border-radius: 0;
+        padding: 2.5rem 2rem;
+        margin-bottom: 3rem;
+        text-align: left;
+      }
+
+      .next-steps h3 {
+        color: #4a5759;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+      }
+
+      .step-list {
+        list-style: none;
+      }
+
+      .step-list li {
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+        background: #fafaf8;
+        border: 1px solid #e6e3dc;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .step-number {
+        width: 30px;
+        height: 30px;
+        background: #7a9299;
+        color: #fafaf8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 400;
+        flex-shrink: 0;
+        letter-spacing: 0.05em;
+      }
+
+      .support-reminder {
+        background: #f5f3f0;
+        border-left: 3px solid #b8a490;
+        padding: 2rem 1.8rem;
+        border-radius: 0;
+        margin-bottom: 2.5rem;
+      }
+
+      .support-reminder h4 {
+        color: #8b6f47;
+        margin-bottom: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+      }
+
+      .support-reminder p {
+        color: #5a6a6f;
+        margin-bottom: 0.5rem;
+        line-height: 2;
+        letter-spacing: 0.03em;
+      }
+
+      .support-reminder a {
+        color: #7a9299;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 42px;
+        text-decoration: none;
+        border-radius: 0;
+        font-weight: 400;
+        transition: all 0.4s ease;
+        letter-spacing: 0.1em;
+      }
+
+      .btn-primary {
+        background: #7a9299;
+        color: #fafaf8;
+        box-shadow: 0 2px 8px rgba(90, 106, 111, 0.15);
+        border: 1px solid #6a8289;
+      }
+
+      .btn-primary:hover {
+        background: #8aa2a9;
+        box-shadow: 0 4px 12px rgba(90, 106, 111, 0.25);
+      }
+
+      .btn-secondary {
+        background: #fafaf8;
+        color: #7a9299;
+        border: 1px solid #7a9299;
+      }
+
+      .btn-secondary:hover {
+        background: #f5f3f0;
+      }
+
+      .social-share {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #d9d5cc;
+      }
+
+      .social-share h4 {
+        color: #4a5759;
+        margin-bottom: 1rem;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+      }
+
+      .social-share p {
+        color: #5a6a6f;
+        font-size: 0.95rem;
+        line-height: 2;
+        letter-spacing: 0.03em;
+      }
+
+      @media (max-width: 768px) {
         .thank-you-container {
-            max-width: 800px;
-            background: #fafaf8;
-            border: 1px solid #d9d5cc;
-            border-radius: 0;
-            padding: 4rem 3rem;
-            text-align: center;
-            box-shadow: 0 2px 12px rgba(90, 106, 111, 0.1);
-            animation: fadeInUp 0.8s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .thank-you-icon {
-            font-size: 5rem;
-            margin-bottom: 2rem;
-            animation: bounce 1s ease infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+          padding: 3rem 2rem;
         }
 
         .thank-you-title {
-            font-size: 2.2rem;
-            color: #4a5759;
-            margin-bottom: 2rem;
-            font-weight: 400;
-            letter-spacing: 0.12em;
+          font-size: 1.8rem;
         }
 
         .thank-you-message {
-            font-size: 1.05rem;
-            color: #5a6a6f;
-            margin-bottom: 3rem;
-            line-height: 2.2;
-            letter-spacing: 0.05em;
-        }
-
-        .next-steps {
-            background: #f5f3f0;
-            border: 1px solid #e6e3dc;
-            border-radius: 0;
-            padding: 2.5rem 2rem;
-            margin-bottom: 3rem;
-            text-align: left;
-        }
-
-        .next-steps h3 {
-            color: #4a5759;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-        }
-
-        .step-list {
-            list-style: none;
-        }
-
-        .step-list li {
-            padding: 1rem;
-            margin-bottom: 0.5rem;
-            background: #fafaf8;
-            border: 1px solid #e6e3dc;
-            border-radius: 0;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .step-number {
-            width: 30px;
-            height: 30px;
-            background: #7a9299;
-            color: #fafaf8;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 400;
-            flex-shrink: 0;
-            letter-spacing: 0.05em;
-        }
-
-        .support-reminder {
-            background: #f5f3f0;
-            border-left: 3px solid #b8a490;
-            padding: 2rem 1.8rem;
-            border-radius: 0;
-            margin-bottom: 2.5rem;
-        }
-
-        .support-reminder h4 {
-            color: #8b6f47;
-            margin-bottom: 1.2rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-        }
-
-        .support-reminder p {
-            color: #5a6a6f;
-            margin-bottom: 0.5rem;
-            line-height: 2;
-            letter-spacing: 0.03em;
-        }
-
-        .support-reminder a {
-            color: #7a9299;
-            font-weight: 500;
-            letter-spacing: 0.05em;
+          font-size: 1rem;
         }
 
         .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+          flex-direction: column;
         }
 
         .btn {
-            display: inline-block;
-            padding: 14px 42px;
-            text-decoration: none;
-            border-radius: 0;
-            font-weight: 400;
-            transition: all 0.4s ease;
-            letter-spacing: 0.1em;
+          width: 100%;
         }
 
-        .btn-primary {
-            background: #7a9299;
-            color: #fafaf8;
-            box-shadow: 0 2px 8px rgba(90, 106, 111, 0.15);
-            border: 1px solid #6a8289;
+        .next-steps {
+          padding: 2rem 1.5rem;
         }
-
-        .btn-primary:hover {
-            background: #8aa2a9;
-            box-shadow: 0 4px 12px rgba(90, 106, 111, 0.25);
-        }
-
-        .btn-secondary {
-            background: #fafaf8;
-            color: #7a9299;
-            border: 1px solid #7a9299;
-        }
-
-        .btn-secondary:hover {
-            background: #f5f3f0;
-        }
-
-        .social-share {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #d9d5cc;
-        }
-
-        .social-share h4 {
-            color: #4a5759;
-            margin-bottom: 1rem;
-            font-weight: 400;
-            letter-spacing: 0.08em;
-        }
-
-        .social-share p {
-            color: #5a6a6f;
-            font-size: 0.95rem;
-            line-height: 2;
-            letter-spacing: 0.03em;
-        }
-
-        @media (max-width: 768px) {
-            .thank-you-container {
-                padding: 3rem 2rem;
-            }
-
-            .thank-you-title {
-                font-size: 1.8rem;
-            }
-
-            .thank-you-message {
-                font-size: 1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .next-steps {
-                padding: 2rem 1.5rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6H8FT3M"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-N6H8FT3M"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="thank-you-container">
-        <div class="thank-you-icon">🙏</div>
-        <h1 class="thank-you-title">ありがとうございます</h1>
-        <p class="thank-you-message" id="thank-you-message">
-            貴重なご感想をありがとうございます。<br>
-            いただいた声を、より多くの方の支えになるコンテンツ作りに活かしてまいります。
+      <div class="thank-you-icon">🙏</div>
+      <h1 class="thank-you-title">ありがとうございます</h1>
+      <p class="thank-you-message" id="thank-you-message">
+        貴重なご感想をありがとうございます。<br />
+        いただいた声を、より多くの方の支えになるコンテンツ作りに活かしてまいります。
+      </p>
+
+      <div class="next-steps" id="personalized-message">
+        <!-- パーソナライズされたメッセージがJavaScriptで挿入されます -->
+      </div>
+
+      <div class="support-reminder">
+        <h4>💙 困ったときは一人で抱え込まないでください</h4>
+        <p>
+          つらいとき、話を聞いてくれる人がいます：<br />
+          <a href="https://www.lifelink.or.jp/inochisos/" target="_blank"
+            >いのちSOS - 相談窓口案内</a
+          ><br />
+          よりそいホットライン: <strong>0120-279-338（24時間・無料）</strong>
         </p>
+      </div>
 
-        <div class="next-steps" id="personalized-message">
-            <!-- パーソナライズされたメッセージがJavaScriptで挿入されます -->
-        </div>
+      <div class="cta-buttons">
+        <a href="index.html" class="btn btn-primary">トップページに戻る</a>
+      </div>
 
-        <div class="support-reminder">
-            <h4>💙 困ったときは一人で抱え込まないでください</h4>
-            <p>
-                つらいとき、話を聞いてくれる人がいます：<br>
-                <a href="https://www.lifelink.or.jp/inochisos/" target="_blank">いのちSOS - 相談窓口案内</a><br>
-                よりそいホットライン: <strong>0120-279-338（24時間・無料）</strong>
-            </p>
-        </div>
-
-        <div class="cta-buttons">
-            <a href="index.html" class="btn btn-primary">トップページに戻る</a>
-        </div>
-
-        <div class="social-share">
-            <h4>このページを大切な人にシェアしませんか？</h4>
-            <p>生きづらさを感じている誰かの助けになるかもしれません。</p>
-        </div>
+      <div class="social-share">
+        <h4>このページを大切な人にシェアしませんか？</h4>
+        <p>生きづらさを感じている誰かの助けになるかもしれません。</p>
+      </div>
     </div>
 
     <script>
-        // ページ読み込み時の処理
-        window.addEventListener('load', () => {
-            const container = document.querySelector('.thank-you-container');
-            container.style.opacity = '0';
+      // ページ読み込み時の処理
+      window.addEventListener('load', () => {
+        const container = document.querySelector('.thank-you-container');
+        container.style.opacity = '0';
 
-            setTimeout(() => {
-                container.style.transition = 'opacity 0.8s ease';
-                container.style.opacity = '1';
-            }, 100);
+        setTimeout(() => {
+          container.style.transition = 'opacity 0.8s ease';
+          container.style.opacity = '1';
+        }, 100);
 
-            // ローカルストレージからフィードバック情報を取得
-            const feedback = localStorage.getItem('userFeedback');
-            const conversionValue = localStorage.getItem('conversionValue') || 0;
+        // ローカルストレージからフィードバック情報を取得
+        const feedback = localStorage.getItem('userFeedback');
+        const conversionValue = localStorage.getItem('conversionValue') || 0;
 
-            // パーソナライズされたメッセージを表示
-            const personalizedMessageDiv = document.getElementById('personalized-message');
-            let messageContent = '';
+        // パーソナライズされたメッセージを表示
+        const personalizedMessageDiv = document.getElementById(
+          'personalized-message'
+        );
+        let messageContent = '';
 
-            switch(feedback) {
-                case 'very-helpful':
-                    messageContent = `
+        switch (feedback) {
+          case 'very-helpful':
+            messageContent = `
                         <h3>😊 とても共感していただけて嬉しいです</h3>
                         <p style="text-align: center; line-height: 2; margin-top: 1rem;">
                             老荘思想の「無為自然」の教えは、現代社会で頑張りすぎている方々に<br>
@@ -311,9 +333,9 @@
                             日常の中で少しずつ実践してみてください。
                         </p>
                     `;
-                    break;
-                case 'helpful':
-                    messageContent = `
+            break;
+          case 'helpful':
+            messageContent = `
                         <h3>🙂 共感していただきありがとうございます</h3>
                         <p style="text-align: center; line-height: 2; margin-top: 1rem;">
                             老荘思想の考え方は、少しずつ日常に取り入れることで<br>
@@ -321,9 +343,9 @@
                             焦らず、自分のペースで実践してみてください。
                         </p>
                     `;
-                    break;
-                case 'somewhat-helpful':
-                    messageContent = `
+            break;
+          case 'somewhat-helpful':
+            messageContent = `
                         <h3>😐 率直なご意見をありがとうございます</h3>
                         <p style="text-align: center; line-height: 2; margin-top: 1rem;">
                             老荘思想は2500年前の教えですが、<br>
@@ -331,9 +353,9 @@
                             他にもストレス軽減の方法は様々あります。下記の相談窓口もご活用ください。
                         </p>
                     `;
-                    break;
-                case 'not-helpful':
-                    messageContent = `
+            break;
+          case 'not-helpful':
+            messageContent = `
                         <h3>😔 正直なご感想をありがとうございます</h3>
                         <p style="text-align: center; line-height: 2; margin-top: 1rem;">
                             今回の内容が十分にお役に立てず申し訳ございません。<br>
@@ -341,32 +363,32 @@
                             一人で抱え込まず、ぜひご利用ください。
                         </p>
                     `;
-                    break;
-                default:
-                    messageContent = `
+            break;
+          default:
+            messageContent = `
                         <h3>貴重なご意見をありがとうございます</h3>
                         <p style="text-align: center; line-height: 2; margin-top: 1rem;">
                             いただいたご感想を今後のコンテンツ作りに活かしてまいります。
                         </p>
                     `;
-            }
+        }
 
-            personalizedMessageDiv.innerHTML = messageContent;
+        personalizedMessageDiv.innerHTML = messageContent;
 
-            // Google Analytics トラッキング（CV価値を含む）
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
-                    'value': parseFloat(conversionValue),
-                    'currency': 'JPY',
-                    'feedback_type': feedback
-                });
-            }
+        // Google Analytics トラッキング（CV価値を含む）
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'conversion', {
+            send_to: 'AW-CONVERSION_ID/CONVERSION_LABEL',
+            value: parseFloat(conversionValue),
+            currency: 'JPY',
+            feedback_type: feedback,
+          });
+        }
 
-            // コンソールログ（デバッグ用）
-            console.log('Feedback:', feedback);
-            console.log('Conversion Value:', conversionValue);
-        });
+        // コンソールログ（デバッグ用）
+        console.log('Feedback:', feedback);
+        console.log('Conversion Value:', conversionValue);
+      });
     </script>
-</body>
+  </body>
 </html>
