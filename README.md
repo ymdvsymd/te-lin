@@ -1,9 +1,7 @@
 # LP Lab
 
-広告運用学習のため作成したLP
-
 <pre>
 lp-lab/
-├── a/  # 露骨過ぎて使えない。悪いLPの例として残す。
-└── b/  # 老荘思想を元に楽に生きるコツを紹介
+├── a/  # Suicide Prevention
+└── b/  # Taoism
 </pre>
