@@ -1,0 +1,33 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        .yin { fill: #7a9299; }
+        .yang { fill: #b8a490; }
+      }
+    </style>
+  </defs>
+
+  <!-- 背景（透過）-->
+
+  <!-- 外側の円（青緑と白のストローク）-->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#7a9299" stroke-width="2"/>
+
+  <!-- 陰陽の主シンボル-->
+  <g>
+    <!-- 陰（青緑） - 左上半分-->
+    <path d="M 100 10 A 90 90 0 0 0 100 190 A 45 45 0 0 1 100 100 A 45 45 0 0 0 100 10 Z" fill="#7a9299"/>
+
+    <!-- 陽（ベージュ） - 右下半分-->
+    <path d="M 100 10 A 90 90 0 0 1 100 190 A 45 45 0 0 0 100 100 A 45 45 0 0 1 100 10 Z" fill="#b8a490"/>
+
+    <!-- 陰の中の陽（白い円）-->
+    <circle cx="100" cy="55" r="12" fill="#f5f3f0"/>
+
+    <!-- 陽の中の陰（青緑の円）-->
+    <circle cx="100" cy="145" r="12" fill="#7a9299"/>
+  </g>
+
+  <!-- 装飾的な外枠（細い線）-->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#b8a490" stroke-width="1.5" opacity="0.6"/>
+</svg>
