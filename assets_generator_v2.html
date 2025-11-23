@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 20px; background: #333; font-family: 'Shippori Mincho', serif; }
+        .asset-wrapper { margin-bottom: 50px; }
+        .label { color: white; margin-bottom: 10px; font-family: sans-serif; }
+        
+        /* Common Styles */
+        .ad-creative {
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f3f0;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* Dimensions */
+        .landscape { width: 1200px; height: 628px; }
+        .square { width: 1200px; height: 1200px; }
+        .logo-landscape-dim { width: 1200px; height: 300px; }
+
+        /* Backgrounds */
+        .bg-water {
+            background: linear-gradient(180deg, #d4d1cb 0%, #c9c5bd 50%, #bfb9ad 100%);
+        }
+        .bg-water-anim {
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+                linear-gradient(180deg, #a8c0c8 0%, #8faab3 100%);
+        }
+        .bg-sky {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+        }
+        .bg-washi {
+            background-color: #f5f3f0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d9d5cc' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .bg-dark {
+            background-color: #4a5759;
+            color: #f5f3f0;
+        }
+
+        /* Typography */
+        .text-center-overlay {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 90%;
+        }
+        .text-main {
+            font-size: 64px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #4a5759;
+            text-shadow: 0 2px 4px rgba(255,255,255,0.5);
+            margin-bottom: 20px;
+        }
+        .text-sub {
+            font-size: 32px;
+            font-weight: 400;
+            color: #5a6a6f;
+        }
+        .text-vertical {
+            writing-mode: vertical-rl;
+            font-size: 120px;
+            letter-spacing: 0.2em;
+            color: #4a5759;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .text-logo {
+            font-size: 180px;
+            color: #4a5759;
+        }
+        .text-logo-landscape {
+            font-size: 80px;
+            color: #4a5759;
+            margin-left: 40px;
+        }
+
+        /* Elements */
+        .logo-img {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+        }
+        .logo-img-small {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+        .water-drop {
+            font-size: 400px;
+            color: #7a9299;
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Landscape 01: Nature (Water Gradient) -->
+    <div class="asset-wrapper">
+        <div class="label">Landscape 01 (Nature A)</div>
+        <div id="landscape_01" class="ad-creative landscape bg-water-anim">
+            <!-- Pure visual -->
+        </div>
+    </div>
+
+    <!-- Landscape 02: Nature (Calm) -->
+    <div class="asset-wrapper">
+        <div class="label">Landscape 02 (Nature B)</div>
+        <div id="landscape_02" class="ad-creative landscape bg-water">
+            <div class="text-center-overlay">
+                <!-- Subtle visual element -->
+                <div style="font-size: 100px; opacity: 0.1;">≋</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Landscape 03: Text A -->
+    <div class="asset-wrapper">
+        <div class="label">Landscape 03 (Text A)</div>
+        <div id="landscape_03" class="ad-creative landscape bg-sky">
+            <div class="text-center-overlay">
+                <div class="text-main">無理に頑張らなくていい</div>
+                <div class="text-sub">心が軽くなる老荘思想</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Landscape 04: Text B (Vertical) -->
+    <div class="asset-wrapper">
+        <div class="label">Landscape 04 (Text B)</div>
+        <div id="landscape_04" class="ad-creative landscape bg-washi">
+            <div class="text-vertical">上善如水</div>
+        </div>
+    </div>
+
+    <!-- Landscape 05: Abstract -->
+    <div class="asset-wrapper">
+        <div class="label">Landscape 05 (Abstract)</div>
+        <div id="landscape_05" class="ad-creative landscape bg-dark">
+            <div class="text-center-overlay">
+                <div style="font-size: 200px; opacity: 0.2; color: white;">☯</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Square 01: Icon (Water Drop) -->
+    <div class="asset-wrapper">
+        <div class="label">Square 01 (Icon A)</div>
+        <div id="square_01" class="ad-creative square bg-washi">
+            <div class="text-center-overlay">
+                <div class="water-drop">💧</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Square 02: Icon (YinYang) -->
+    <div class="asset-wrapper">
+        <div class="label">Square 02 (Icon B)</div>
+        <div id="square_02" class="ad-creative square bg-water">
+            <div class="text-center-overlay">
+                <img src="b/assets/logo-yinyang.svg" class="logo-img" alt="YinYang">
+            </div>
+        </div>
+    </div>
+
+    <!-- Square 03: Text (Logo) -->
+    <div class="asset-wrapper">
+        <div class="label">Square 03 (Text)</div>
+        <div id="square_03" class="ad-creative square bg-washi">
+            <div class="text-center-overlay">
+                <div class="text-logo">老荘</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Square 04: Nature -->
+    <div class="asset-wrapper">
+        <div class="label">Square 04 (Nature)</div>
+        <div id="square_04" class="ad-creative square bg-water-anim">
+            <!-- Pure visual -->
+        </div>
+    </div>
+
+    <!-- Square 05: Illustration -->
+    <div class="asset-wrapper">
+        <div class="label">Square 05 (Illustration)</div>
+        <div id="square_05" class="ad-creative square bg-sky">
+            <div class="text-center-overlay">
+                <div style="font-size: 300px; opacity: 0.5;">🦋</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo Square -->
+    <div class="asset-wrapper">
+        <div class="label">Logo Square</div>
+        <div id="logo_square" class="ad-creative square bg-washi">
+            <div class="text-center-overlay">
+                <img src="b/assets/logo-yinyang.svg" style="width: 800px; height: 800px;" alt="Logo">
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo Landscape -->
+    <div class="asset-wrapper">
+        <div class="label">Logo Landscape</div>
+        <div id="logo_landscape" class="ad-creative logo-landscape-dim bg-washi" style="display: flex; align-items: center; justify-content: center;">
+            <img src="b/assets/logo-yinyang.svg" class="logo-img-small" alt="Logo">
+            <div class="text-logo-landscape">老荘思想ガイド</div>
+        </div>
+    </div>
+
+</body>
+</html>
