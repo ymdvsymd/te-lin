@@ -9,7 +9,7 @@ def get_file_size_kb(filepath):
 def compress_image(filepath):
     """Compresses the image if it exceeds 5000KB."""
     size_kb = get_file_size_kb(filepath)
-    if size_kb <= 5000:
+    if size_kb <= 4500:
         return
 
     print(f"Processing {filepath} ({size_kb:.2f} KB)...")
@@ -28,7 +28,7 @@ def compress_image(filepath):
 
     # Check size again
     new_size_kb = get_file_size_kb(filepath)
-    if new_size_kb <= 5000:
+    if new_size_kb <= 4500:
         print(f"  -> Resized to {new_size_kb:.2f} KB. Done.")
         return
 
